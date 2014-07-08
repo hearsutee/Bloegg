@@ -1,0 +1,51 @@
+troiswa_blog_blog:
+    pattern:  /blog/
+    defaults: { _controller: TroiswaBlogBundle:Article:displayPosts}
+
+
+troiswa_blog_create-article:
+   pattern:  /create-article/
+   defaults: { _controller: TroiswaBlogBundle:Article:create}
+
+
+troiswa_blog_display-article:
+     pattern:  /blog/article/{idarticle}
+     defaults: { _controller: TroiswaBlogBundle:Article:display}
+
+troiswa_blog_edit-article:
+      pattern:  /blog/article/edit/{idarticle}
+      defaults: { _controller: TroiswaBlogBundle:Article:edit}
+
+troiswa_blog_delete-article:
+     pattern:  /blog/article/delete/{idarticle}
+     defaults: { _controller: TroiswaBlogBundle:Article:delete}
+
+troiswa_blog_create-article:
+     pattern:  /blog/article/create/
+     defaults: { _controller: TroiswaBlogBundle:Article:create}
+
+troiswa_blog_category:
+      pattern:  /blog/category/{id}
+      defaults: { _controller: TroiswaBlogBundle:Article:displayCategory}
+
+
+#securité :
+
+security_login:
+      pattern: /login
+      defaults: { _controller: TroiswaBlogBundle:Security:login}
+
+security_logout:
+      pattern: /logout
+
+
+security_check:
+      pattern: /login_check
+
+test_security:
+      pattern: /admin
+      defaults: { _controller: TroiswaBlogBundle:Security:test}
+
+register:
+      pattern: /register
+      defaults: { _controller: TroiswaBlogBundle:Security:registerUser}

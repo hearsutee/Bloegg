@@ -1,0 +1,4 @@
+troiswa_blog:
+    resource: "@TroiswaBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+

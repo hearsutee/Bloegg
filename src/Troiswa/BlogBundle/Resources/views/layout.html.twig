@@ -1,0 +1,105 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+
+
+    <body class="home blog">
+
+
+        <!-- Start Header -->
+        <div class="container zerogrid">
+            <div class="col-full">
+                <div class="wrap-col">
+                    <div id="header-nav-container">
+
+
+                        {% block nav %}
+
+                            {{ include ('TroiswaBlogBundle:Default:nav.html.twig') }}
+
+                        {% endblock nav %}
+
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <!-- End Header -->
+
+        <div class="spacing-30"></div>
+
+
+
+
+    {% block caroussel %}
+
+    {% endblock caroussel %}
+
+
+
+
+
+
+
+
+
+
+    <!-- Start Main Container -->
+    <div class="container zerogrid">
+
+    {% block content %}
+
+
+
+    {% endblock content %}
+
+
+     <div class="col-1-3">
+     <div class="wrap-col">
+     {#ici la searchbar dans la vue des posts.#}
+    {% block sidebar %}
+
+
+
+    {% endblock sidebar %}
+     </div>
+     </div>
+    
+    
+
+    </div>
+    <!-- End Main Container -->
+
+    {% block footer %}
+        <!-- Start Footer -->
+        <div class="spacing-30"></div>
+        <div class="container zerogrid">
+            <div id="footer-container" class="col-full">
+                <div class="wrap-col">
+                    <!-- Footer Copyright -->
+                    <p>Copyrigh &copy; 2013 Euclid. All Rights Reserved.</p>
+                    <!-- End Footer Copyright -->
+
+                    <!-- Footer Logo -->
+                    <img src="../images/footer-logo.png" id="footer-logo"/>
+                    <!-- End Footer Logo -->
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+
+    {% endblock footer %}
+
+
+    </body>
+
+    </html>
+{% endblock body %}
+
+
+
+

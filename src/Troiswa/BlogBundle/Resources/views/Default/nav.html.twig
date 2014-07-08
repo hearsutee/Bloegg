@@ -1,0 +1,39 @@
+
+<div class="wrap-col">
+    <a href="#">
+        <img width="40px" height="40px" src="http://symfony.com/logos/symfony_black_03.png?v=4"
+             id="logo"/>
+        {#AFAIRE mettre ce style dans le css#}
+        <style>
+            #header-nav-container > a > img {
+                padding: 3px;
+            }
+        </style>
+    </a>
+
+    {%  block search %}
+        {#ici la search bar uniquement dans la vue d'un seul article.#}
+    {%  endblock search %}
+
+    <!-- Navigation Menu -->
+
+    <ul class="sf-menu">
+        <li class="menu-item current-menu-item"><a href="#">Home</a></li>
+
+        <li class="menu-item"><a href="#">Blog</a></li>
+
+        <li class="menu-item"><a href="#">Features</a>
+            <ul class="sub-menu">
+                <li class="menu-item"><a href="#">Menu 01</a></li>
+                <li class="menu-item"><a href="#">Menu 02</a></li>
+                <li class="menu-item"><a href="#">Menu 03</a></li>
+            </ul>
+        </li>
+
+        <li class="menu-item"><a href="#">About us</a></li>
+    </ul>
+    <!-- End Navigation Menu -->
+
+    <div class="clear"></div>
+</div>
+

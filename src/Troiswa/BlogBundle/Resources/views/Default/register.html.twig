@@ -1,0 +1,14 @@
+{% extends 'TroiswaBlogBundle::layout.html.twig' %}
+
+{% block content %}
+
+
+ {% for flash in app.session.flashbag.get('notice') %}
+        <h1> {{ flash }}</h1>
+ {% endfor %}
+
+{{ form(formReg) }}
+
+
+
+{% endblock %}

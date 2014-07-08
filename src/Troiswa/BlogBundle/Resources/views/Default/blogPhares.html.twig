@@ -1,0 +1,22 @@
+
+
+
+
+
+{% for article in articlesPhares %}
+
+ <li>
+                    <div class="post-image">
+                        <div class="post-mask"></div>
+                        <img width="70" height="70" src="{{ article.artimage }}" class="attachment-post-widget #"  />
+                    </div>
+
+                    <h6><a href="{{ path('troiswa_blog_display-article', {'idarticle' :article.id }) }}">
+                            {{ article.titre }}
+                        </a></h6>
+                    <span>{{ article.dateCreation|date('Y-m-d') }}</span>
+                    <div class="clear"></div>
+</li>
+
+
+{% endfor %}

@@ -1,0 +1,65 @@
+{% extends 'TroiswaBlogBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <div class="well">
+        <h3>Articles</h3>
+
+        {{ tinymce_init() }}
+        {{ form_start(formArt,{'method':'POST','class':'form-group'}) }}
+        
+        {{ form_label(formArt.titre, 'titre' , {'label_attr' : {'class' : ''} } ) }}
+        {{ form_widget(formArt.titre, {'attr': {'placeholder':'titre', 'class':'form-control'} } ) }}
+        {{ form_errors(formArt.titre) }}
+        <br>
+
+        {{ form_label(formArt.artimage, 'artimage' , {'label_attr' : {'class' : ''} } ) }}
+        {{ form_widget(formArt.artimage, {'attr': {'placeholder':'artimage', 'class':'form-control'} } ) }}
+        {{ form_errors(formArt.artimage) }}
+        <br>
+
+        {{ form_label(formArt.auteur, null, {'label_attr': {'class':''} } ) }}
+        {{ form_widget(formArt.auteur, {'attr': {'placeholder':'auteur', 'class':'form-control'} } ) }}
+        {{ form_errors(formArt.auteur) }}
+        <br>
+
+        {{ form_label(formArt.contenu, null, {'label_attr': {'class':''} } ) }}
+        {{ form_widget(formArt.contenu, {'attr': {'placeholder':'contenu', 'class':'form-control tinymce'} } ) }}
+        {{ form_errors(formArt.contenu) }}
+        <br>
+
+        <br>
+        {{ form_label(formArt.cover, 'Popularity') }}
+        {{ form_widget(formArt.cover, {'attr': {'class':'cover'} } ) }}
+        {{ form_errors(formArt.cover) }}
+
+        <br>
+        {{ form_label(formArt.category, 'category') }}
+        {{ form_widget(formArt.category, {'attr': {'class':'category'} } ) }}
+        {{ form_errors(formArt.category) }}
+        <br>
+
+        {{ form_widget(formArt.submit, {'attr': {'class':'btn btn-primary'} } ) }}
+
+        {#en fermant un formulauire comme ceci Twig ajoute automatiquement les champs qui ne sont pas la..#}
+        {{ form_end(formArt) }}
+        {#sinon fermer en html normal..#}
+
+        {# affiche success #}
+        {% for flash in app.session.flashbag.get('notice') %}
+            <p class = 'alert alert.success'>{{ flash }}</p>
+        {% endfor %}
+    </div>
+
+    <div class=''>
+        {% for article in articles %}
+
+            <p>{{ article.dateCreation|date('Y-m-d') }}</p><br>
+            <p>{{ article.titre }}</p><br>
+            <p>{{ article.contenu }}</p><br>
+            <hr>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+<!-- Start Featured Carousel -->
+<div class="zerogrid wrap-col">
+    <div class="news-holder cf">
+
+        <ul class="news-headlines">
+            {% for article in articles %}
+            <li class="selected">{{ article.titre }}</li>
+
+            {% endfor %}
+            <!-- li.highlight gets inserted here -->
+        </ul>
+
+        <div class="news-preview">
+
+
+            {% for article in articles %}
+            <div class="news-content">
+                <img src="{{ article.artimage }}">
+
+
+                <p>{{ article.contenu | raw | truncate(100, true) }}</p>
+            </div><!-- .news-content -->
+            {% endfor %}
+            <!-- .news-content -->
+
+        </div><!-- .news-preview -->
+
+    </div><!-- .news-holder -->
+</div>
+
+<!-- end Featured Carousel -->
+
+<div class="spacing-80"></div>
+<div class="spacing-80"></div>
+
+
+{#{% for article in articles %}#}
+
+            {#<li class="first carousel-item">#}
+            {#<div class="post-margin">#}
+
+            {#&#123;&#35; affichage titre :&#35;&#125;#}
+
+            {#<h6><a href="#">The Lighthouse Effect</a></h6>#}
+
+            {#&#123;&#35; affichage date :&#35;&#125;#}
+
+            {#<span><i class="fa fa-clock-o"></i>{{ article.dateCreation|date('Y-m-d') }}</span>#}
+            {#</div>#}
+
+            {#<div class="featured-image">#}
+
+            {#&#123;&#35; affichage image de titre :&#35;&#125;#}
+
+            {#<img width="200px" height="90" src="{{ article.artimage }}"  />#}
+
+            {#&#123;&#35;<div class="post-icon">&#35;&#125;#}
+            {#&#123;&#35;<span class="fa-stack fa-lg">&#35;&#125;#}
+            {#&#123;&#35;<i class="fa fa-circle fa-stack-2x"></i>&#35;&#125;#}
+            {#&#123;&#35;<i class="fa fa-picture-o fa-stack-1x fa-inverse"></i>&#35;&#125;#}
+            {#&#123;&#35;</span>&#35;&#125;#}
+            {#&#123;&#35;</div>&#35;&#125;#}
+            {#</div>#}
+
+            {#&#123;&#35; affichage contenu :&#35;&#125;#}
+
+            {#&#123;&#35;<div class="post-margin">&#35;&#125;#}
+            {#&#123;&#35;{{ article.contenu | truncate(40) | raw }}&#35;&#125;#}
+            {#&#123;&#35;</div>&#35;&#125;#}
+            {#</li>#}
+
+{#{% endfor %}#}
+
+
+
+
+

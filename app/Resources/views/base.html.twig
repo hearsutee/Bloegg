@@ -1,0 +1,134 @@
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">#}
+{#<title>Euclid Free Responsive Html5 Themes</title>#}
+
+{#<link rel='stylesheet' id='reset-css'  href='../css/reset.css' type='text/css' media='all' />#}
+{#<link rel='stylesheet' id='superfish-css'  href='../css/superfish.css' type='text/css' media='all' />#}
+{#<link rel='stylesheet' id='fontawsome-css'  href='../css/font-awsome/css/font-awesome.css' type='text/css' media='all' />#}
+{#<link rel='stylesheet' id='orbit-css-css'  href='../css/orbit.css' type='text/css' media='all' />#}
+{#<link rel='stylesheet' id='style-css'  href='../css/style.css' type='text/css' media='all' />#}
+{#<link rel='stylesheet' id='color-scheme-css'  href='../css/color/green.css' type='text/css' media='all' />#}
+{#<link rel="stylesheet" href="../css/zerogrid.css" type="text/css" media="screen">#}
+{#<link rel="stylesheet" href="../css/responsive.css" type="text/css" media="screen">#}
+{#<script type='text/javascript' src='../js/jquery.js'></script>#}
+{#<script type='text/javascript' src='../js/jquery-migrate.min.js'></script>#}
+{#<script type='text/javascript' src='../js/jquery-1.10.2.min.js'></script>#}
+{#<script type='text/javascript' src='../js/jquery.carouFredSel-6.2.1-packed.js'></script>#}
+{#<script type='text/javascript' src='../js/hoverIntent.js'></script>#}
+{#<script type='text/javascript' src='../js/superfish.js'></script>#}
+{#<script type='text/javascript' src='../js/orbit.min.js'></script>#}
+{#<script src="../js/css3-mediaqueries.js"></script>#}
+
+{% block javascript %}
+    {% javascripts
+    '@TroiswaBlogBundle/Resources/public/js/jquery-1.10.2.min.js'
+    '@TroiswaBlogBundle/Resources/public/js/vertical.news.slider.js'
+    '@TroiswaBlogBundle/Resources/public/js/*'
+
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+
+
+    {# js caroussel :#}
+
+    {#<script type="text/javascript" language="javascript">#}
+        {#$(function () {#}
+
+            {#/* Start Carousel */#}
+            {#$('#featured-posts').carouFredSel({#}
+                {#auto: true,#}
+                {#prev: '#prev2',#}
+                {#next: '#next2',#}
+            {#});#}
+            {#/* End Carousel */#}
+
+
+            {#/* Start Orbit Slider */#}
+            {#$(window).load(function () {#}
+                {#$('.post-gallery').orbit({#}
+                    {#animation: 'fade',#}
+                {#});#}
+            {#});#}
+            {#/* End Orbit Slider */#}
+
+
+            {#/* Start Super fish */#}
+            {#jQuery(document).ready(function () {#}
+                {#jQuery('ul.sf-menu').superfish({#}
+                    {#delay: 100,#}
+                    {#speed: 'fast',#}
+                    {#speedOut: 'fast',#}
+                {#});#}
+            {#});#}
+            {#/* End Of Super fish */#}
+
+        {#});#}
+    {#</script>#}
+
+
+    {% endjavascripts %}
+{% endblock %}
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}SymfonyBlogEuclid{% endblock %}</title>
+
+
+    {% block stylesheet %}
+
+
+
+        {% stylesheets
+        '@TroiswaBlogBundle/Resources/public/css/reset.css'
+        '@TroiswaBlogBundle/Resources/public/css/vertical.news.slider.css'
+
+        '@TroiswaBlogBundle/Resources/public/css/*'
+
+        %}
+
+
+        <link rel="stylesheet" href="{{ asset_url }}" media="all">
+
+        {% endstylesheets %}
+
+    {% endblock %}
+
+    <script>
+        jQuery(function($) {
+            $('.slider').sss();
+        });
+
+        $('.slider').sss({
+            slideShow : true, // Set to false to prevent SSS from automatically animating.
+            startingSlide : 0, // Slide to display first. Uses array notation (0 = first slide).
+            speed : 1900, // Slideshow speed in milliseconds.
+            showNav : true // Set to false to hide navigation arrows.
+        });
+    </script>
+</head>
+<body>
+
+
+{% block body %}
+
+{#layout.html.twig ici#}
+
+{% endblock %}
+
+{#{% javascripts#}
+{#'@TroiswaBlogBundle/troiswa/Resources/public/js/jquery.raty.js'#}
+{#'@TroiswaBlogBundle/troiswa/Resources/public/js/jquery.js'#}
+{#filter='yui_js'#}
+{#%}#}
+{#<script src ={{ asset_url }}></script>#}
+{#{% endjavascripts %}#}
+
+
+</body>
+</html>
